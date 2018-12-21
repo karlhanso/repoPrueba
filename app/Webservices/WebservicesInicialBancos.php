@@ -1,7 +1,6 @@
 <?php
 namespace Webservices;
 
-
 use Illuminate\Support\Facades\Log;
 use Cache;
 use SoapClient;
@@ -15,9 +14,9 @@ class WebservicesInicialBancos {
     
     public function __construct()
     {
-       $this->url      = env('urlwsl');
-       $this->transkey = env('tranKey');
-       $this->login    = env('login');
+        $this->url      = env('urlwsl');
+        $this->transkey = env('tranKey');
+        $this->login    = env('login');
     }
 
     public function obtenerListaDeBancos()

@@ -6,11 +6,9 @@
     "type": "project",
     "require": {
         "php": ">=7.0.0",
-        "artisaninweb/laravel-soap": "0.3.0.9",
         "fideloper/proxy": "~3.3",
         "laravel/framework": "5.5.*",
-        "laravel/tinker": "~1.0",
-        "wsdl2phpgenerator/wsdl2phpgenerator": "^3.4"
+        "laravel/tinker": "~1.0"
     },
     "require-dev": {
         "filp/whoops": "~2.0",
@@ -26,13 +24,15 @@
         ],
         "psr-4": {
             "App\\": "app/",
-            "Webservices\\":"app/Webservices"
+            "Webservices\\":"app/Webservices",
+            "Transacciones\\":"app/Transacciones"
         }
     },
     "autoload-dev": {
         "psr-4": {
             "Tests\\": "tests/",
-            "Webservices\\":"app/Webservices"
+            "Webservices\\":"app/Webservices",
+            "Transacciones\\":"app/Transacciones"
         }
     },
     "extra": {

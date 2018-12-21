@@ -12,7 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    /*return view('welcome');*/
 });
     
-Route::get('/inicial','Webservice@formPrincipal');    
+Route::get('/inicial','Webservice@formPrincipal');
+
+Route::post('/registarTransaccion','TransaccionController@enviarRegistro');    
