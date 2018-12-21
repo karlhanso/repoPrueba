@@ -12,7 +12,8 @@ use SoapClient;
 use DateTime;
 use Session;    
 
-class Webservice extends Controller { 
+class Webservice extends Controller 
+{ 
     private $url;
     private $transkey;
     private $login;
@@ -20,13 +21,12 @@ class Webservice extends Controller {
 
     public function __construct(WebserviceTransaccion $wstransaccion)
     {
-        //$this->crearTransaccion = $transaccionRepository;
         $this->ws = $wstransaccion;
     }
 
     public function formPrincipal()  
     {   
-        if(Session::get('transactionID')){
+        if (Session::get('transactionID')) {
             $idtransaccion = Session::get('transactionID');
             $resp          = $this->ws->getInfoTransaccion($idtransaccion);
             $resp          = $resp->getTransactionInformationResult;

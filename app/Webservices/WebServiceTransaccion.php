@@ -7,7 +7,8 @@ use Cache;
 use SoapClient;
 use DateTime;
 
-class WebServiceTransaccion {
+class WebServiceTransaccion 
+{
     private $url;
     private $transkey;
     private $login;

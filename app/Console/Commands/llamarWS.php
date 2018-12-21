@@ -6,7 +6,8 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Console\Command;
 use Webservices\WebservicesInicialBancos;
 
-class llamarWS extends Command {
+class llamarWS extends Command 
+{
     /**
      * The name and signature of the console command.
      *

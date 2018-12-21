@@ -1,4 +1,5 @@
 <?php
+
 namespace Webservices;
 
 use Illuminate\Support\Facades\Log;
@@ -6,8 +7,8 @@ use Cache;
 use SoapClient;
 use DateTime;
 
-class WebservicesInicialBancos {
-
+class WebservicesInicialBancos
+{
     private $url;
     private $transkey;
     private $login;

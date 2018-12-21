@@ -4,7 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Transaccion extends Model {
+class Transaccion extends Model 
+{
     /**
     *  Asociacion de tabla con el modelo.
     *

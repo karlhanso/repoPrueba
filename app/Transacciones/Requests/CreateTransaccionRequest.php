@@ -1,10 +1,11 @@
-<?php 
+<?php
 
 namespace Transacciones\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateTransaccionRequest extends FormRequest {
+class CreateTransaccionRequest extends FormRequest 
+{
     
     public function response(array $errors)
     {

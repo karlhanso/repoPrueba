@@ -8,13 +8,13 @@ use Transacciones\Requests\CreateTransaccionRequest;
 use Webservices\WebserviceTransaccion;
 use Session;
 
-class TransaccionController extends Controller {
+class TransaccionController extends Controller 
+{
     
     private $ws;
 
     public function __construct(WebserviceTransaccion $wstransaccion)
     {
-        //$this->crearTransaccion = $transaccionRepository;
         $this->ws = $wstransaccion;
     }
 

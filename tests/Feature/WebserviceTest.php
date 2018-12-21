@@ -9,12 +9,9 @@ use Mockery as m;
 use SoapClient;
 use DateTime;
 
-class WebserviceTest extends TestCase {
-    /**
-     * A basic test example.
-     *
-     * @return void
-     */
+class WebserviceTest extends TestCase 
+{  
+    
     public function testGetBancos()
     {
         $item           =  new \stdClass();
