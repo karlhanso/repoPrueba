@@ -26,7 +26,7 @@ class WebservicesInicialBancos
         $date    = new DateTime();
         $seed    = date(env('formato'));
   
-        $hashString = sha1($seed.$this->transkey, false);
+        $hashString = sha1($seed.$this->transkey, env('parametroFalso'));
 
         $data = [
             'login'   => $this->login,

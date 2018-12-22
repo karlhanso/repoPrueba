@@ -26,7 +26,7 @@ class WebServiceTransaccion
         $date    = new DateTime();
         $seed    = date(env('formato'));
   
-        $hashString = sha1($seed.$this->transkey, false);
+        $hashString = sha1($seed.$this->transkey, env('parametroFalso'));
 
         $payer = [
             'documentType' => $rq->get('tipoDoc'),
@@ -113,7 +113,7 @@ class WebServiceTransaccion
         $client     = new SoapClient($this->url);
         $date       = new DateTime();
         $seed       = date(env('formato'));
-        $hashString = sha1($seed.$this->transkey, false);
+        $hashString = sha1($seed.$this->transkey, env('parametroFalso'));
 
         $data = [
             'login'   => $this->login,

@@ -11,7 +11,8 @@
     <!-- Styles -->
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <style></style>
+    <link rel="stylesheet" href="{{ URL::asset('css/hojaEstilos.css') }}">
+    
     @php $bancos = Cache::get("bancos"); @endphp
 </head>
 <body>
@@ -103,12 +104,20 @@
                     <input placeholder="" id="codpostal" name="codpostal" type="text" class="validate">
                     <label for="first_name">Codigo postal</label>
                 </div>
+                <div class="input-field col s6">
+                    <input placeholder="" id="first_name" type="text" class="validate" name="canttot" value="50000">
+                    <label for="first_name">Cantidad total/monto</label>
+                </div>
+
+                <button class="btn waves-effect waves-light" type="submit" name="action">Enviar
+                    <i class="material-icons right"></i>
+                </button>
                 <div class="row"></div>
                 <div class="row"></div>
-                <div class="row">
+                <div class="row uno">
                     <label> Datos del Pagador/Payer</label>
                 </div>
-                <div class="row">
+                <div class="row dos">
                     <div class="input-field col s6">
                         <input placeholder="" id="first_name" type="text" class="validate" value="CC">
                         <label for="first_name">Tipo de documento</label>
@@ -161,9 +170,9 @@
             </div>
             <div class="row"></div>
             <div class="row"></div>
-            <div class="row">
+            <div class="row tres">
                 <label> Datos de envio/Shipping</div>
-            <div class="row">
+            <div class="row tres">
                 <div class="input-field col s6">
                     <input placeholder="" id="first_name" type="text" class="validate" value="CC">
                     <label for="first_name">Tipo de documento</label>
@@ -212,22 +221,19 @@
                     <input placeholder="" id="first_name" type="text" class="validate" value="3562676">
                     <label for="first_name">Celular</label>
                 </div>
-                <div class="input-field col s6">
-                    <input placeholder="" id="first_name" type="text" class="validate" name="canttot" value="50000">
-                    <label for="first_name">Cantidad total</label>
-                </div>
+            
                 <div class="row"></div>
                 <div class="row"></div>
                 <div class="row"></div>
-                <button class="btn waves-effect waves-light" type="submit" name="action">Enviar
-                    <i class="material-icons right"></i>
-                </button>
+                
             </div>
         </form>
         <div class="row">
             <div class="col s12">
                 <label for="first_name">Registro</label>
+
                 <table>
+                    @if (count($tabla) > 0 )  
                     <thead>
                         <tr>
                             <th>Id transaccion</th>
@@ -240,8 +246,10 @@
                             <th>Response Reason Text</th>
                         </tr>
                     </thead>
+                    @endif
                     <tbody>
-                    @foreach($tabla as $tb)
+                    @if (count($tabla) > 0 )      
+                     @foreach($tabla as $tb)
                       <tr>
                         <td>{{$tb->transactionID}}</td>
                         <td>{{$tb->sessionID}}</td>
@@ -252,7 +260,10 @@
                         <td>{{$tb->transactionState}}</td>
                         <td>{{$tb->responseReasonText}}</td>
                       </tr>
-                    @endforeach
+                     @endforeach
+                    @else
+                     <label>{{ env('registrosFaltantes')}}</label>
+                    @endif  
                     </tbody>
                 </table>
             </div>
@@ -262,10 +273,6 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('select').formSelect();
-        });
-    </script>
+    <script type="text/javascript"  src="{{ URL::asset('js/funciones.js') }}"></script>
 </body>
 </html>

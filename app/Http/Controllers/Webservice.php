@@ -45,6 +45,6 @@ class Webservice extends Controller
             session()->flush();
         }
         $registros =  Compra::all();
-        return view('formulario')->with('tabla', $registros);
+        return view(env('vistaPrincipal'))->with('tabla', $registros);
     }
  }

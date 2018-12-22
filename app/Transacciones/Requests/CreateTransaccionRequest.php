@@ -9,7 +9,7 @@ class CreateTransaccionRequest extends FormRequest
     
     public function response(array $errors)
     {
-        return response()->json($errors, 422);
+        return response()->json($errors, env('errorCuatrocientos'));
     }
 
     public function authorize()
@@ -20,8 +20,11 @@ class CreateTransaccionRequest extends FormRequest
     public function rules()
     {
         return [
-            'mail'   => ['required'],
-            'nombre' => ['required']
+            'mail'    => ['required'],
+            'nombre'  => ['required'],
+            'canttot' => ['required'],
+            'tipoDoc' => ['required'],
+            'nDoc'    => ['required'],
         ];
     }
 }
