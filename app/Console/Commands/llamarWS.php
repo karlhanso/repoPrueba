@@ -36,8 +36,8 @@ class llamarWS extends Command
     }
 
     /**
-     * Execute the console command.
-     *
+     * El handle ejecuta el comando
+     * para obtener la lista de bancos
      * @return mixed
      */
     public function handle()
