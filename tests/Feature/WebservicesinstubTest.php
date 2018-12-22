@@ -42,15 +42,14 @@ class WebservicesinstubTest extends TestCase
         $this->assertEquals(env('unionNombre'),$res[env('unionIndice')]->bankName);
     }
 
-   public function testsCreatAprovisionamiento()
-   {   
-   	   $url      = env('urlwsl');
-       $transkey = env('tranKey');
-       $login    = env('login');
-       $client  = new SoapClient($url);
-       $date    = new DateTime();
-       $seed    = date(env('formato'));
-       
+   public function testsCrearAprovisionamiento()
+   {
+       $url        = env('urlwsl');
+       $transkey   = env('tranKey');
+       $login      = env('login');
+       $client     = new SoapClient($url);
+       $date       = new DateTime();
+       $seed       = date(env('formato'));
        $hashString = sha1($seed.$transkey, env('parametroFalso'));
 
        $payer = [
